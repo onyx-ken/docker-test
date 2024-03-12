@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>도커 테스트 프로젝트</title>
+    <style>
+        .highlight{
+            color: yellow;
+            background: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<h1>이 웹 애플리케이션의 환경 색상은 <span class="highlight" th:style="'color: ' + ${envBackgroundImage}" th:text="${envColor}">노란색</span> 입니다!</h1>
+    <img th:src="@{/images/{imageName}.png(imageName=${envBackgroundImage})}" src="/static/images/yellow.png" th:alt="${envColor} + ' 고양이'" alt="노란색 고양이">
+</body>
+</html>
